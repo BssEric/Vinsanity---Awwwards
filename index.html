@@ -45,7 +45,7 @@
             z-index: 9999;
             transform: translate(-50%, -50%);
             transition: width 0.3s ease, height 0.3s ease, background-color 0.3s;
-            mix-blend-e: difference;
+            mix-blend-mode: difference;
         }
         .cursor-follower.active {
             width: 80px;
@@ -197,9 +197,7 @@
     </svg> 
     <svg id="icon-sound" class="w-4 h-4 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path> 
     </svg> </button> 
-   <audio id="bg-music" loop=""> 
-    <source src="" type="audio/mpeg"> 
-   </audio> 
+   <audio id="bg-music" loop=""></audio> 
    <audio id="hover-sfx"> 
     <source src="https://assets.mixkit.co/active_storage/sfx/2568/2568-preview.mp3" type="audio/mpeg"> 
    </audio> 
@@ -211,7 +209,7 @@
    <section class="flex flex-col items-center justify-center overflow-hidden h-screen bg-black"> 
     <div class="absolute top-0 left-0 w-full h-full z-0" id="hero-bg-img"> 
      <video autoplay muted loop playsinline preload="auto" class="w-full h-full object-cover object-center" poster="https://s.yimg.com/ny/api/res/1.2/coMnCs8hMK8.j553aYCD6Q--/YXBwaWQ9aGlnaGxhbmRlcjt3PTEyMDA7aD02NTY-/https://s.yimg.com/os/creatr-uploaded-images/2019-12/0f240cb0-259f-11ea-b6df-85fcc7b829be">
-      <source src="assets/1000158719.mp4" type="video/mp4">
+      <source src="assets/1000158737.mp4" type="video/mp4">
      </video>
      <div class="absolute inset-0 bg-gradient-to-b from-transparent to-[#050505]"></div> 
     </div> 
@@ -298,7 +296,7 @@
     <div class="bento-grid max-w-7xl mx-auto h-auto md:h-[800px]"> 
      <div class="bento-item item-large hover-target bg-gray-900"> 
       <video autoplay loop muted playsinline preload="auto" class="w-full h-full object-cover pointer-events-none">
-       <source src="assets/1000158757.mp4" type="video/mp4">
+       <source src="assets/1000158737.mp4" type="video/mp4">
       </video>
       <div class="absolute bottom-4 left-4 font-bold uppercase text-xl z-10 drop-shadow-md">
         The 360 Windmill 
@@ -306,7 +304,7 @@
      </div> 
      <div class="bento-item item-tall hover-target bg-gray-800"> 
       <video autoplay loop muted playsinline preload="auto" class="w-full h-full object-cover pointer-events-none">
-       <source src="assets/1000158746.mp4" type="video/mp4">
+       <source src="assets/1000158743.mp4" type="video/mp4">
       </video>
       <div class="absolute bottom-4 left-4 font-bold uppercase text-sm z-10">
         Le Dunk de la Mort 
