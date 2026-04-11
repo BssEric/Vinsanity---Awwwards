@@ -98,7 +98,6 @@
         .jersey-layer {
             position: absolute;
             top: 50%; left: 50%;
-            transform: translate(-50%, -50%);
             width: 100%;
             max-width: 500px;
             display: flex;
@@ -410,6 +409,12 @@ startLoader();
 
         gsap.registerPlugin(ScrollTrigger);
 
+        // --- INITIALIZE CENTERING ---
+        // Isso garante que o GSAP gerencie a centralização desde o início, evitando conflitos com o CSS
+        gsap.set(".jersey-layer", { xPercent: -50, yPercent: -50 });
+        gsap.set("#jersey-text", { xPercent: -50, yPercent: -50 });
+
+
         // --- Custom Cursor Logic ---
         // Smooth Scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -445,7 +450,8 @@ startLoader();
             if(jersey) {
                 const moveX = (window.innerWidth / 2 - mouseX) * 0.02;
                 const moveY = (window.innerHeight / 2 - mouseY) * 0.02;
-                gsap.to('.jersey-layer', { x: -50 + '%', xPercent: moveX, y: -50 + '%', yPercent: moveY, duration: 1 });
+                // Usamos x e y para o deslocamento em pixels, mantendo xPercent/yPercent para a centralização
+                gsap.to('.jersey-layer', { x: moveX, y: moveY, duration: 1 });
             }
             });
 
@@ -517,11 +523,11 @@ startLoader();
 
         jerseyTl
             // Passo 1: Zoom na regata
-            .to("#jersey-img", { scale: 3, rotateY: 10, opacity: 0.1, ease: "power1.inOut" }, "start")
+            .to("#jersey-img", { xPercent: -50, yPercent: -50, scale: 3, rotateY: 10, opacity: 0.1, ease: "power1.inOut" }, "start")
             // Passo 2: Revelar o texto no fundo
-            .to("#jersey-text", { opacity: 0.2, scale: 1.2, ease: "none" }, "start")
+            .to("#jersey-text", { xPercent: -50, yPercent: -50, opacity: 0.2, scale: 1.2, ease: "none" }, "start")
             // Passo 3: O Jogador aparece "de dentro" da regata
-            .to("#player-reveal", { opacity: 1, scale: 1, rotateY: 0, ease: "power1.out" }, "start+=0.2");
+            .to("#player-reveal", { xPercent: -50, yPercent: -50, opacity: 1, scale: 1, rotateY: 0, ease: "power1.out" }, "start+=0.2");
 
 
         // 4. Stats Horizontal Scroll (Corrigido para mover o container)
