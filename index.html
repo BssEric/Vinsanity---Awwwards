@@ -2,13 +2,12 @@
   <meta charset="UTF-8"> 
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
   <title>Vince Carter | The Half Man Half Amazing</title> 
-  <link rel="icon" type="image/png" href="Assets/99-throwback-authentic-jersey-pu-removebg-preview.png">
-  <link rel="icon" type="image/png" href="Assets/99-throwback-authentic-jersey-pu-removebg-preview.png">
+  <link rel="icon" type="image/png" href="assets/99-throwback-authentic-jersey-pu-removebg-preview.png">
   <script src="https://cdn.tailwindcss.com"></script> 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script> 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script> 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script> 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;900&amp;family=Oswald:wght@700&amp;display=swap" rel="stylesheet"> 
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;900&amp;family=Oswald:wght@700&amp;display=swap" rel="stylesheet" media="print" onload="this.media='all'"> 
   <style>
         :root {
             --raptors-purple: #4B0082;
@@ -22,6 +21,8 @@
             line-height: 1.6; /* Improved readability for body text */
             font-family: 'Inter', sans-serif; 
             cursor: none; 
+            text-rendering: optimizeLegibility;
+            -webkit-font-smoothing: antialiased;
         }
         p {
             max-width: 70ch; /* Limit line length for better readability */
@@ -44,7 +45,7 @@
             z-index: 9999;
             transform: translate(-50%, -50%);
             transition: width 0.3s ease, height 0.3s ease, background-color 0.3s;
-            mix-blend-mode: difference;
+            mix-blend-e: difference;
         }
         .cursor-follower.active {
             width: 80px;
@@ -110,7 +111,7 @@
         /* --- Bento Grid Gallery --- */
         .bento-grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(2, 1fr);
             grid-template-rows: repeat(4, 200px);
             gap: 15px;
             padding: 20px;
@@ -132,6 +133,7 @@
         }
         .item-large, .item-tall, .item-wide { grid-column: span 2; }
 
+        /* Mobile Optimization for Bento */
         @media (min-width: 768px) {
             .bento-grid {
                 grid-template-columns: repeat(4, 1fr);
@@ -196,7 +198,7 @@
     <svg id="icon-sound" class="w-4 h-4 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path> 
     </svg> </button> 
    <audio id="bg-music" loop=""> 
-    <source src="https://assets.mixkit.co/active_storage/sfx/2085/2085-preview.mp3" type="audio/mpeg"> 
+    <source src="" type="audio/mpeg"> 
    </audio> 
    <audio id="hover-sfx"> 
     <source src="https://assets.mixkit.co/active_storage/sfx/2568/2568-preview.mp3" type="audio/mpeg"> 
@@ -208,8 +210,8 @@
   <main> 
    <section class="flex flex-col items-center justify-center overflow-hidden h-screen bg-black"> 
     <div class="absolute top-0 left-0 w-full h-full z-0" id="hero-bg-img"> 
-     <video autoplay muted loop playsinline class="w-full h-full object-cover object-center" poster="https://s.yimg.com/ny/api/res/1.2/coMnCs8hMK8.j553aYCD6Q--/YXBwaWQ9aGlnaGxhbmRlcjt3PTEyMDA7aD02NTY-/https://s.yimg.com/os/creatr-uploaded-images/2019-12/0f240cb0-259f-11ea-b6df-85fcc7b829be">
-      <source src="Assets/1000158719.mp4" type="video/mp4">
+     <video autoplay muted loop playsinline preload="auto" class="w-full h-full object-cover object-center" poster="https://s.yimg.com/ny/api/res/1.2/coMnCs8hMK8.j553aYCD6Q--/YXBwaWQ9aGlnaGxhbmRlcjt3PTEyMDA7aD02NTY-/https://s.yimg.com/os/creatr-uploaded-images/2019-12/0f240cb0-259f-11ea-b6df-85fcc7b829be">
+      <source src="assets/1000158719.mp4" type="video/mp4">
      </video>
      <div class="absolute inset-0 bg-gradient-to-b from-transparent to-[#050505]"></div> 
     </div> 
@@ -228,9 +230,9 @@
      <h2 class="text-5xl md:text-7xl font-black mb-8 uppercase italic leading-tight"> Air <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-red-600">Canada.</span> </h2> 
      <p class="text-xl text-gray-400 max-w-lg leading-relaxed mb-10"> Quando ele chegou ao norte, o basquete mudou para sempre. A gravidade era apenas uma sugestão para Vince Carter. Ele trouxe estilo, agressividade e uma capacidade atlética que o mundo nunca tinha visto antes. </p> 
     </div> 
-    <div class="h-[50vh] md:h-[60vh] relative order-1 lg:order-2"> 
+    <div class="h-[50vh] md:h-[60vh] relative order-1 lg:order-2 will-change-transform"> 
      <div class="image-reveal-container h-full w-full absolute top-0 left-0 z-10" id="vince-reveal-img"> 
-      <img src="https://wallpaperaccess.com/full/7529224.jpg" alt="Vince Carter Raptors" class="w-full h-full object-cover object-center grayscale hover:grayscale-0 transition-all duration-700"> 
+      <img src="https://wallpaperaccess.com/full/7529224.jpg" loading="lazy" alt="Vince Carter Raptors" class="w-full h-full object-cover object-center grayscale hover:grayscale-0 transition-all duration-700"> 
      </div> 
      <div class="absolute -bottom-4 -right-4 w-full h-full border-2 border-red-800/30 z-0"></div> 
     </div> 
@@ -238,54 +240,54 @@
    <section id="jersey-section" class="h-screen relative bg-[#080808]"> 
     <div class="h-full w-full overflow-hidden flex items-center justify-center"> 
      <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-purple-900/20 via-black to-black z-0"></div> 
-     <div class="jersey-container z-10"> 
-      <img src="Assets/99-throwback-authentic-jersey-pu-removebg-preview.png" alt="Raptors Jersey" class="jersey-layer z-20 object-contain drop-shadow-[0_20px_50px_rgba(75,0,130,0.5)]" id="jersey-img"> 
-      <div class="jersey-layer z-10 opacity-0 scale-90" id="player-reveal"> 
-       <img src="Assets/R.faf338c1bc0164b69b44793427f1a2-removebg-preview.png" class="h-[100vh] md:h-[150vh] max-h-[900px] w-auto object-contain rounded-lg shadow-2xl filter brightness-110 contrast-125" style="mask-image: linear-gradient(black, transparent);" alt="Vince Carter Face"> 
+     <div class="jersey-container relative z-10 w-full h-full"> 
+      <img src="assets/99-throwback-authentic-jersey-pu-removebg-preview.png" alt="Raptors Jersey" class="jersey-layer absolute top-1/2 left-1/2 z-20 object-contain drop-shadow-[0_20px_50px_rgba(75,0,130,0.5)] max-h-[70vh] pointer-events-none" id="jersey-img"> 
+      <div class="jersey-layer absolute top-1/2 left-1/2 z-10 flex items-center justify-center" id="player-reveal"> 
+       <img src="assets/R.faf338c1bc0164b69b44793427f1a2-removebg-preview.png" class="h-[90vh] md:h-[130vh] max-h-[900px] w-auto object-contain filter brightness-110 contrast-125" style="mask-image: linear-gradient(black, transparent);" alt="Vince Carter Face"> 
       </div> 
-      <h2 class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[20vw] font-black text-white/5 opacity-0 z-0 whitespace-nowrap" id="jersey-text"> VINSANITY </h2> 
+      <h2 class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[15vw] md:text-[20vw] font-black text-white/5 opacity-0 z-0 whitespace-nowrap select-none" id="jersey-text"> VINSANITY </h2> 
      </div> 
-     <div class="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 opacity-50 whitespace-nowrap"> 
-      <p class="text-sm uppercase tracking-widest text-purple-400">Continue scrollando para vestir a camisa</p> 
+     <div class="absolute bottom-10 left-1/2 -translate-x-1/2 z-30 opacity-50 whitespace-nowrap pointer-events-none"> 
+      <p class="text-xs md:text-sm uppercase tracking-widest text-purple-400">Continue scrollando para vestir a camisa</p> 
      </div> 
     </div> 
    </section> 
    <section id="stats-horizontal" class="bg-[#0a0a0a] border-y border-[#222] overflow-hidden py-0 relative z-20"> 
     <div class="absolute top-0 left-0 w-full h-full bg-purple-900/5 z-0 pointer-events-none"></div> 
-    <div class="flex whitespace-nowrap items-center h-screen pl-20" id="stats-track"> 
-     <div class="mr-24 shrink-0"> 
+    <div class="flex whitespace-nowrap items-center h-screen pl-6 md:pl-20" id="stats-track"> 
+     <div class="mr-12 md:mr-24 shrink-0"> 
       <h2 class="text-[10vw] font-black uppercase leading-none text-white opacity-90"> The<br><span class="text-red-600">Numbers</span> </h2> 
      </div> 
-     <div class="stat-card hover-target shrink-0"> 
+     <div class="stat-card hover-target shrink-0 w-[80vw] md:w-[400px]"> 
      <div class="text-red-500 mb-4 text-5xl">
         ⏳
       </div>
       <div> <span class="text-6xl font-black text-white block mb-2">22</span> <span class="uppercase tracking-widest text-xs text-gray-400 font-bold">Temporadas na NBA</span> 
-       <p class="text-xs text-gray-600 mt-4 leading-tight">O único jogador a atuar em quatro décadas diferentes.</p> 
+       <p class="text-xs text-gray-600 mt-4 leading-tight whitespace-normal">O único jogador a atuar em quatro décadas diferentes.</p> 
       </div> 
      </div> 
-     <div class="stat-card hover-target shrink-0"> 
+     <div class="stat-card hover-target shrink-0 w-[80vw] md:w-[400px]"> 
       <div class="text-red-500 mb-4 text-5xl">
         👑 
       </div> 
       <div> <span class="text-6xl font-black text-white block mb-2">2000</span> <span class="uppercase tracking-widest text-xs text-gray-400 font-bold">Dunk Contest Champ</span> 
-       <p class="text-xs text-gray-600 mt-4 leading-tight">"It's Over!" - A performance mais dominante da história.</p> 
+       <p class="text-xs text-gray-600 mt-4 leading-tight whitespace-normal">"It's Over!" - A performance mais dominante da história.</p> 
       </div> 
      </div> 
-     <div class="stat-card hover-target shrink-0"> 
+     <div class="stat-card hover-target shrink-0 w-[80vw] md:w-[400px]"> 
       <div class="text-purple-500 mb-4 text-5xl">
         ⭐️ 
       </div> 
       <div> <span class="text-6xl font-black text-white block mb-2">8x</span> <span class="uppercase tracking-widest text-xs text-gray-400 font-bold">NBA All-Star</span> 
-       <p class="text-xs text-gray-600 mt-4 leading-tight">O favorito dos fãs por quase uma década inteira.</p> 
+       <p class="text-xs text-gray-600 mt-4 leading-tight whitespace-normal">O favorito dos fãs por quase uma década inteira.</p> 
       </div> 
      </div> 
-     <div class="stat-card hover-target shrink-0 border-l-4 border-red-600"> 
+     <div class="stat-card hover-target shrink-0 border-l-4 border-red-600 w-[80vw] md:w-[400px]"> 
       <div class="text-white mb-4 text-5xl">
         🇨🇦 
       </div> 
       <div> <span class="text-6xl font-black text-white block mb-2">TOR</span> <span class="uppercase tracking-widest text-xs text-gray-400 font-bold">Effect</span> 
-       <p class="text-xs text-gray-600 mt-4 leading-tight">Colocou o Toronto Raptors no mapa global.</p> 
+       <p class="text-xs text-gray-600 mt-4 leading-tight whitespace-normal">Colocou o Toronto Raptors no mapa global.</p> 
       </div> 
      </div> 
      <div class="w-[30vw] shrink-0"></div> 
@@ -295,32 +297,32 @@
     <h2 class="text-4xl md:text-6xl font-black uppercase mb-10 text-center tracking-tighter"> Highlight <span class="text-purple-600">Reel</span> </h2> 
     <div class="bento-grid max-w-7xl mx-auto h-auto md:h-[800px]"> 
      <div class="bento-item item-large hover-target bg-gray-900"> 
-      <video autoplay loop muted playsinline class="w-full h-full object-cover pointer-events-none">
-       <source src="Assets/1000158757.mp4" type="video/mp4">
+      <video autoplay loop muted playsinline preload="auto" class="w-full h-full object-cover pointer-events-none">
+       <source src="assets/1000158757.mp4" type="video/mp4">
       </video>
       <div class="absolute bottom-4 left-4 font-bold uppercase text-xl z-10 drop-shadow-md">
         The 360 Windmill 
       </div> 
      </div> 
      <div class="bento-item item-tall hover-target bg-gray-800"> 
-      <video autoplay loop muted playsinline class="w-full h-full object-cover pointer-events-none">
-       <source src="Assets/1000158746.mp4" type="video/mp4">
+      <video autoplay loop muted playsinline preload="auto" class="w-full h-full object-cover pointer-events-none">
+       <source src="assets/1000158746.mp4" type="video/mp4">
       </video>
       <div class="absolute bottom-4 left-4 font-bold uppercase text-sm z-10">
         Le Dunk de la Mort 
       </div> 
      </div> 
      <div class="bento-item hover-target bg-gray-800"> 
-      <video autoplay loop muted playsinline class="w-full h-full object-cover pointer-events-none">
-       <source src="Assets/1000158737.mp4" type="video/mp4">
+      <video autoplay loop muted playsinline preload="auto" class="w-full h-full object-cover pointer-events-none">
+       <source src="assets/1000158737.mp4" type="video/mp4">
       </video>
       <div class="absolute bottom-4 left-4 font-bold uppercase text-sm z-10">
         It´s Over!
       </div> 
      </div> 
      <div class="bento-item hover-target bg-gray-800"> 
-      <video autoplay loop muted playsinline class="w-full h-full object-cover pointer-events-none">
-       <source src="Assets/1000158743.mp4" type="video/mp4">
+      <video autoplay loop muted playsinline preload="auto" class="w-full h-full object-cover pointer-events-none">
+       <source src="assets/1000158743.mp4" type="video/mp4">
       </video>
       <div class="absolute bottom-4 left-4 font-bold uppercase text-sm z-10">
         Celebration
@@ -408,7 +410,16 @@ function initHeroAnimations() {
 // Inicia o loader
 startLoader();
 
-        gsap.registerPlugin(ScrollTrigger);
+        gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+
+        // Configurações globais de performance GSAP
+        gsap.config({ force3D: true });
+
+        // Configuração para evitar "pulos" no mobile quando a barra de endereço desaparece
+        ScrollTrigger.config({ 
+            ignoreMobileResize: true,
+            autoRefreshEvents: "visibilitychange,DOMContentLoaded,load" 
+        });
 
         // --- Custom Cursor Logic ---
         // Smooth Scrolling for anchor links
@@ -434,6 +445,9 @@ startLoader();
         const isTouch = window.matchMedia("(hover: none) and (pointer: coarse)").matches;
 
         if (!isTouch) {
+            // Inicializa a centralização baseada em porcentagem para o GSAP
+            gsap.set('.jersey-layer', { xPercent: -50, yPercent: -50 });
+
             // Inicia animação do cursor apenas se NÃO for touch
             animateCursor();
             document.addEventListener('mousemove', (e) => {
@@ -445,7 +459,7 @@ startLoader();
             if(jersey) {
                 const moveX = (window.innerWidth / 2 - mouseX) * 0.02;
                 const moveY = (window.innerHeight / 2 - mouseY) * 0.02;
-                gsap.to('.jersey-layer', { x: -50 + '%', xPercent: moveX, y: -50 + '%', yPercent: moveY, duration: 1 });
+                gsap.to('.jersey-layer', { x: moveX, y: moveY, duration: 1, ease: "power2.out" });
             }
             });
 
@@ -505,19 +519,33 @@ startLoader();
         });
         // 3. THE JERSEY 3D REVEAL (A lógica complexa pedida)
         // Fixa a seção enquanto anima
+
+        // Reset de estados iniciais via GSAP para evitar conflitos com CSS/Tailwind
+        gsap.set("#player-reveal", { opacity: 0, scale: 0.85, xPercent: -50, yPercent: -50 });
+        gsap.set("#jersey-img", { xPercent: -50, yPercent: -50 });
+        gsap.set("#jersey-text", { xPercent: -50, yPercent: -50 });
+
         const jerseyTl = gsap.timeline({
             scrollTrigger: {
                 trigger: "#jersey-section",
-                start: "top top",
+                start: "top 0%",
                 end: "+=1500", // Distância do scroll
                 scrub: true,
-                pin: true
+                pin: true,
+                fastScrollEnd: true,
+                preventOverlaps: true
             }
         });
 
         jerseyTl
             // Passo 1: Zoom na regata
-            .to("#jersey-img", { scale: 3, rotateY: 10, opacity: 0.1, ease: "power1.inOut" }, "start")
+            .to("#jersey-img", { 
+                scale: window.innerWidth < 768 ? 2.2 : 3, 
+                rotateY: 10, 
+                opacity: 0.1, 
+                ease: "power1.inOut",
+                willChange: "transform, opacity" 
+            }, "start")
             // Passo 2: Revelar o texto no fundo
             .to("#jersey-text", { opacity: 0.2, scale: 1.2, ease: "none" }, "start")
             // Passo 3: O Jogador aparece "de dentro" da regata
@@ -540,6 +568,13 @@ startLoader();
                 end: () => "+=" + (statsTrack.scrollWidth - window.innerWidth),
                 invalidateOnRefresh: true // Recalcula ao redimensionar a tela
             }
+        });
+
+        // Recalcula o ScrollTrigger quando tudo carregar completamente (essencial para Vercel)
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                ScrollTrigger.refresh();
+            }, 100);
         });
 
         // 5. Timeline Appearance
